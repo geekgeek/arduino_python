@@ -55,7 +55,7 @@ void sdWriteServoValue()
    valWrite3 = analogRead(potpin3);
    valWrite3 = map(valWrite3, 0, 1023, 0, 180);     // scale it to use it with the servo (value between 0 and 180) 
    // write 
-    myFile.println();
+    
     
     myFile.print("<servo1>");
     myFile.print(String(valWrite));
@@ -68,6 +68,8 @@ void sdWriteServoValue()
     myFile.print("<servo3>");
     myFile.print(String(valWrite3));
     myFile.print("</servo3>");
+    
+    myFile.println();
     // close the file:
     myFile.close();
     Serial.println("done.");
